@@ -1,0 +1,36 @@
+$item-height: 200px
+
+.Item
+  display: flex
+  justify-content: flex-start
+  height: $item-height
+  padding: 20px 0
+  border-bottom: thin solid #eee
+
+  &-img
+    width: 25%
+
+  &-info
+    font-family: "Proxima Nova", -apple-system, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif
+    display: flex
+    flex-direction: column
+    text-align: left
+
+    &--title
+      font-weight: light
+      font-size: 20px
+      opacity: 0.8
+      margin-bottom: 10px
+
+    &--price
+      font-size: 24px
+      margin-bottom: 12px
+
+    &--shipment
+      width: fit-content
+      padding: 4px 5px
+      font-size: 14px
+      line-height: 14px
+      color: #00a650
+      background-color: #e6f7ee
+      border-radius: 4px
