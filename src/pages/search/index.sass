@@ -1,0 +1,68 @@
+$container-width: 1200px
+$container-height: 40px
+$logo-width: 134px
+$form-width: 598px
+$ad-width: 340px
+$separation: 56px
+
+$main-color: #fff159
+$white: #fff
+
+$border-radius: 2px
+$padding: 8px
+
+.SearchPage
+  display: flex
+  flex-direction: column
+  padding: $padding 0
+  background-color: $main-color
+
+  &-container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: $container-height
+    width: $container-width
+    margin: 0 auto
+
+    .Meli-logo
+      width: $logo-width
+      margin-right: $separation
+
+    .Search-form
+      position: relative
+      height: 100%
+      width: $form-width
+      margin-right: $separation
+
+      &--input, &--button
+        height: 100%
+        border: none
+        border-radius: $border-radius
+        background-color: $white
+        font-size: 1rem
+
+      &--input
+        width: 100%
+        padding: 7px 60px 9px 15px
+        outline: none
+        box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1)
+        background-color: $white
+        font-size: 1rem
+        &::-webkit-input-placeholder
+          opacity: 0.5
+
+      &--button
+        position: absolute
+        top: 0
+        right: 0
+        padding: .45rem
+        cursor: pointer
+
+    .Meli-ad
+      width: $ad-width
+
+img
+  width: 100%
+  height: 100%
+  object-fit: contain
