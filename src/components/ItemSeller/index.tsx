@@ -1,11 +1,12 @@
 import { FCItemDetail } from '@/vite-env'
+import './styles.sass'
 
 const ItemSeller: React.FC<FCItemDetail> = ({ item }) => {
   return (
-    <div className='ItemPurchase--seller'>
-      <p>Vendido por `item.seller.nickname`</p>
-      <p>MercadoLider | XXX ventas</p>
-      <p>Hace `item.installments.factura`</p>
+    <div className='ItemSeller'>
+      <p className='ItemSeller-nickname'>Vendido por <span>`item.seller.nickname`</span></p>
+      <p className='ItemSeller-separator'>MercadoLider <span>|</span> XXX ventas</p>
+      <p className='ItemSeller-bill'>Hace `item.installments.factura`</p>
     </div>
   )
 }
