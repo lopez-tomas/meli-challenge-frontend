@@ -33,6 +33,7 @@ const SearchPage = () => {
             <img
               src={adImage}
               alt="meli-ad"
+              title="Suscribite al nivel 6 con beneficios exclusivos"
             />
           </a>
         </div>
