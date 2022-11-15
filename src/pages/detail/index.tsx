@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { ItemDetail } from '@/vite-env.d'
 import ItemInfo from '@/components/ItemInfo'
-import ItemPurchase from '@/components/ItemPurchase'
+import ItemPurchase from '@/containers/ItemPurchase'
 import './styles.sass'
 
 const DetailPage = () => {
@@ -20,7 +20,10 @@ const DetailPage = () => {
       </section>
 
       <section className='Detail-container Description-container'>
-        <p>{item.description}</p>
+        <div>
+          <h1>Descripción</h1>
+          <p>{item.description}</p>
+        </div>
       </section>
     </main>
   )
