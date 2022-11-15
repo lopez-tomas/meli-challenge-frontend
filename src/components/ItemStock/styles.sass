@@ -1,0 +1,38 @@
+.ItemStock
+  display: flex
+  flex-direction: column
+  margin-bottom: 13px
+
+  &-title
+    justify-self: center
+    font-size: 1rem
+    line-height: 21.6px
+    opacity: 0.9
+
+  div
+    display: inherit
+    align-items: center
+    width: 100%
+
+    .ItemStock-quantity, .ItemStock-select, .ItemStock-msg
+      padding: 12px 0
+
+    .ItemStock-quantity
+      font-size: 1rem
+
+    .ItemStock-select
+      font-size: 1rem
+      font-weight: bold
+      border: none
+
+      &:focus
+        outline: none
+
+    .ItemStock-msg
+      margin-left: 2px
+      font-size: 14px
+      opacity: 0.55
+
+
+    // .ItemStock-msg
+    //   width: fit-content
