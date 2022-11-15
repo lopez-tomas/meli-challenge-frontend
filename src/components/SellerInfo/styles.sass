@@ -1,0 +1,41 @@
+$green: #00a650
+
+.SellerInfo
+  padding: 16px
+
+  div.SellerInfo-container
+    padding: 26px 17px 26px 17px
+    border: thin solid #ededed
+    border-radius: 8px
+
+    h1.SellerInfo-container--title
+      font-size: 18px
+      font-weight: normal
+      line-height: 22.5px
+      margin-bottom: 28px
+
+    div.SellerInfo-location, div.SellerInfo-title, div.SellerInfo-level
+      display: flex
+      aling-items: flex-start
+      justify-content: flex-start
+
+      div
+        display: inherit
+        flex-direction: column
+        p
+          margin-left: 10px
+
+          &:first-child
+            font-size: 16px
+            opacity: 0.9
+          &:nth-child(2)
+            font-size: 14px
+            opacity: 0.55
+
+    div.SellerInfo-location, div.SellerInfo-title
+      margin-bottom: 20px
+
+    div.SellerInfo-title
+      div
+        p:first-child
+          color: $green
