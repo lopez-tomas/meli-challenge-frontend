@@ -23,4 +23,8 @@ export interface ItemDetail extends Item {
   description: string;
 }
 
+export interface FCItemDetail {
+  item: ItemDetail;
+}
+
 /// <reference types="vite/client" />
