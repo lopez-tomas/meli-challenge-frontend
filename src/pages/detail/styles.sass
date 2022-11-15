@@ -1,6 +1,7 @@
 $background-color: #ededed
 $container-background-color: #fff
 $detail-width: 1184px
+$purchase-width: 325px
 $radius: 4px
 
 .DetailPage
@@ -9,18 +10,20 @@ $radius: 4px
   padding: 66px 0
   background-color: $background-color
 
-  .Detail-container, .Detail-description
+  .Detail-container, .Description-container
     display: grid
-    grid-template-columns: 1fr 1fr 1fr
-    height: 100%
     width: $detail-width
     margin: 0 auto
     border-radius: $radius
     background-color: $container-background-color
 
+  .Detail-container
+    grid-template-columns: 1fr 1fr $purchase-width
+    height: 100%
+
   .Description-container
-    grid-template-columns: 2fr 1fr
-    padding: 0 45px 45px 45px
+    grid-template-columns: 2fr $purchase-width
+    padding: 0 0 45px 45px
 
     div
       h1
