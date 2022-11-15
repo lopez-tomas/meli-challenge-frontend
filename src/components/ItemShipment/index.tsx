@@ -1,19 +1,24 @@
-import React from 'react'
 import { FaTruck, FaMapMarkerAlt } from 'react-icons/fa'
+import './styles.sass'
 
 const ItemShipment = () => {
   return (
-    <div className='ItemPurchase-shipment'>
-      <div>
-        <FaTruck />
+    <div className='ItemShipment'>
+      <div className='ItemShipment-left'>
+        <FaTruck style={{ color: '#00a650' }} />
+      </div>
+      <div className='ItemShipment-right'>
         <p>Envío gratis a todo el país</p>
-      </div>
-      <div>
         <p>Conocé los tiempos y las formas de envío.</p>
-      </div>
-      <div>
-        <FaMapMarkerAlt />
-        <a href="#">Calcular cuándo llega</a>
+        <div>
+          <FaMapMarkerAlt
+            style={{
+              color: '#3483fa',
+              marginRight: '6px'
+            }}
+          />
+          <a href="#">Calcular cuándo llega</a>
+        </div>
       </div>
     </div>
   )

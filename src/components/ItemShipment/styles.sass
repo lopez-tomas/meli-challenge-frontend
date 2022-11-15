@@ -1,0 +1,39 @@
+$green: #00a650
+$blue: #3483fa
+$blueHover: #2a6acb
+$height: 83px
+$separation: 8px
+
+.ItemShipment
+  display: flex
+  height: $height
+
+  div
+    display: flex
+    justify-content: center
+
+    &.ItemShipment-left
+      width: 10%
+
+      &--truck
+
+    &.ItemShipment-right
+      flex-direction: column
+      justify-content: flex-start
+
+      p
+        margin-bottom: $separation
+        &:first-child
+          font-size: 16px
+          color: $green
+        &:nth-child(2)
+          font-size: 14px
+          opacity: .55
+
+      div
+        justify-content: flex-start
+        a
+          color: $blue
+          font-size: 14px
+          &:hover
+            color: $blueHover
