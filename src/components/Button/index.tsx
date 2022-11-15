@@ -1,4 +1,4 @@
-import React from 'react'
+import './styles.sass'
 
 interface Props {
   secondary?: boolean;
@@ -8,12 +8,16 @@ interface Props {
 const Button: React.FC<Props> = ({ secondary, text }) => {
   if (secondary) {
     return (
-      <button>{text}</button>
+      <button
+        className={`Button ${secondary ? 'secondary' : ''}`}
+        >
+          {text}
+        </button>
     )
   }
 
   return (
-    <button>{text}</button>
+    <button className='Button'>{text}</button>
   )
 }
 
