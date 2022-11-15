@@ -1,9 +1,9 @@
-import React from 'react'
 import Button from '@/components/Button'
+import './styles.sass'
 
 const ItemButtons = () => {
   return (
-    <div className='ItemPurchase-buttons'>
+    <div className='ItemButtons'>
       <Button text='Comprar ahora' />
       <Button secondary text='Agregar al carrito' />
     </div>
