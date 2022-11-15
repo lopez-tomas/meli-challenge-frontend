@@ -1,0 +1,28 @@
+$blue: #3483fa
+$blue-hover: #2968c8
+
+.ItemGuarantee
+  display: flex
+  flex-direction: column
+  height: 186px
+
+  div
+    display: inherit
+    margin-bottom: 17px
+
+    p
+      margin-left: 10px
+      font-size: 14px
+      color: $blue
+      cursor: pointer
+      &:hover
+        color: $blue-hover
+
+      span
+        color: #000
+        opacity: 0.55
+        cursor: default
+
+    &:last-child
+      margin-bottom: 0
+      opacity: 0.55

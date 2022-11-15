@@ -1,27 +1,33 @@
 import { FCItemDetail } from '@/vite-env'
 import { FaReply, FaShieldAlt, FaTrophy, FaAward } from 'react-icons/fa'
+import './styles.sass'
 
 const ItemGuarantee: React.FC<FCItemDetail> = ({ item }) => {
   return (
-    <div className='ItemPurchase--guarantee'>
+    <div className='ItemGuarantee'>
       <div>
-        <FaReply />
-        <p><span>Devolución gratis</span>. Tenés 30 días desde que lo recibís.</p>
+        <FaReply className='Icon' />
+        <p>Devolución gratis. <span>Tenés 30 días desde que lo recibís.</span></p>
       </div>
       <div>
-        <FaShieldAlt />
-        <p><span>Compra Protegida</span>, recibí el producto que esperabas o te devolvemes tu dinero.</p>
+        <FaShieldAlt className='Icon' />
+        <p>Compra Protegida<span>, recibí el producto que esperabas o te devolvemes tu dinero.</span></p>
       </div>
       <div>
-        <FaTrophy />
-        <p><span>Mercado Puntos</span>. Sumás 2151 puntos.</p>
+        <FaTrophy className='Icon' />
+        <p>Mercado Puntos<span>. Sumás 2151 puntos.</span></p>
       </div>
       {item.warranty &&
         <div>
-          <FaAward />
+          <FaAward className='Icon' />
           <p>12 meses de garantía de fábrica</p>
         </div>
       }
+      <style jsx="true">{`
+        .Icon {
+          opacity: 0.55;
+        }
+      `}</style>
     </div>
   )
 }
