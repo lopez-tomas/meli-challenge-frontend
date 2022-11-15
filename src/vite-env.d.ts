@@ -1,3 +1,5 @@
+import React from "react";
+
 declare module '*.png';
 declare module '*.sass' {
   const content: {[className: string]: string};
@@ -25,6 +27,13 @@ export interface ItemDetail extends Item {
 
 export interface FCItemDetail {
   item: ItemDetail;
+}
+
+declare module 'react' {
+  interface StyleHTMLAttributes<T> extends React.HTMLAttributes<T> {
+    jsx?: boolean | string;
+    global?: boolean;
+  }
 }
 
 /// <reference types="vite/client" />
