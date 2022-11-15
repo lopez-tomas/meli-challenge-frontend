@@ -18,6 +18,7 @@ export interface Item {
 }
 
 export interface ItemDetail extends Item {
+  warranty: string;
   sold_quantity: number;
   description: string;
 }
