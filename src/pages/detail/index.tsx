@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
 import useGetItemDetail from '@/hooks/useGetItemDetail'
-import { ISeller } from '@/vite-env.d'
+import { ISeller, Installments } from '@/vite-env.d'
 
 import ItemInfo from '@/components/ItemInfo'
 import ItemPurchase from '@/containers/ItemPurchase'
@@ -14,6 +14,7 @@ const DetailPage = () => {
 
   const location = useLocation()
   const seller: ISeller = location.state.seller
+  const installments: Installments = location.state.installments
 
   useEffect(() => {
     window.scrollTo({ top: 0 })
@@ -36,7 +37,7 @@ const DetailPage = () => {
           <img src={item?.picture} alt={item?.title} />
         </div>
 
-        <ItemInfo item={item!} />
+        <ItemInfo item={item!} installments={installments} />
 
         <ItemPurchase item={item!} seller={seller} />
       </section>
