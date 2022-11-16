@@ -1,9 +1,14 @@
-import { FCItemDetail } from '@/vite-env'
+import { ItemDetail, Installments } from '@/vite-env'
 import { formatPrice, soldQuantityText } from '@/utils/'
 import { FaRegHeart } from 'react-icons/fa'
 import './styles.sass'
 
-const ItemInfo: React.FC<FCItemDetail> = ({ item }) => {
+interface Props {
+  item: ItemDetail;
+  installments: Installments;
+}
+
+const ItemInfo: React.FC<Props> = ({ item, installments }) => {
   return (
     <article className='ItemInfo'>
       <div className='ItemInfo-container'>
@@ -18,8 +23,12 @@ const ItemInfo: React.FC<FCItemDetail> = ({ item }) => {
         </header>
 
         <div className='ItemInfo-price'>
-          <h2 className='ItemInfo-price--total'>$ {formatPrice(item?.price?.amount)}</h2>
-          <p className='ItemInfo-price--installments'>en 6x $ {formatPrice(item?.price?.amount / 6)}</p>
+          <h2 className='ItemInfo-price--total'>
+            $ {formatPrice(item?.price?.amount)}
+          </h2>
+          <p className='ItemInfo-price--installments'>
+            en {installments.quantity}x $ {formatPrice(installments.amount)}
+          </p>
           <a href="#">Ver los medios de pago</a>
         </div>
       </div>
