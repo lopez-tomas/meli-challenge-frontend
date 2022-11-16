@@ -13,7 +13,7 @@ const Item: React.FC<Props> = ({ data })=> {
     <article className='Item'>
       <Link
         to={`/items/${data.id}`}
-        state={{ seller: data.seller }}
+        state={{ seller: data.seller, installments: data.installments }}
         title={data.title}
         className='Item-img'
       >
@@ -22,7 +22,7 @@ const Item: React.FC<Props> = ({ data })=> {
       <div className='Item-info'>
         <Link
           to={`/items/${data.id}`}
-          state={{ seller: data.seller }}
+          state={{ seller: data.seller, installments: data.installments }}
           title={data.title}
           className='Item-info--title'
         >
@@ -30,7 +30,7 @@ const Item: React.FC<Props> = ({ data })=> {
         </Link>
         <Link
           to={`/items/${data.id}`}
-          state={{ seller: data.seller }}
+          state={{ seller: data.seller, installments: data.installments }}
           className='Item-info--price'
         >
           $ {formatPrice(data.price.amount)}
