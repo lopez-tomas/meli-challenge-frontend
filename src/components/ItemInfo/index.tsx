@@ -1,16 +1,15 @@
 import { FCItemDetail } from '@/vite-env'
+import { formatPrice, soldQuantityText } from '@/utils/'
 import { FaRegHeart } from 'react-icons/fa'
 import './styles.sass'
 
 const ItemInfo: React.FC<FCItemDetail> = ({ item }) => {
-  const nf = new Intl.NumberFormat("es-AR")
-
   return (
     <article className='ItemInfo'>
       <div className='ItemInfo-container'>
         <header className='ItemInfo-status'>
           <div className='ItemInfo-status--condition'>
-            <p>{item?.condition} | {item?.sold_quantity} vendidos</p>
+            <p>{item?.condition} | {item?.sold_quantity} {soldQuantityText(item?.sold_quantity)}</p>
             <FaRegHeart className='Heart-icon' />
           </div>
           <div className='ItemInfo-status--title'>
@@ -19,8 +18,8 @@ const ItemInfo: React.FC<FCItemDetail> = ({ item }) => {
         </header>
 
         <div className='ItemInfo-price'>
-          <h2 className='ItemInfo-price--total'>$ {nf.format(item?.price?.amount)}</h2>
-          <p className='ItemInfo-price--installments'>en 6x $ {nf.format(item?.price?.amount / 6)}</p>
+          <h2 className='ItemInfo-price--total'>$ {formatPrice(item?.price?.amount)}</h2>
+          <p className='ItemInfo-price--installments'>en 6x $ {formatPrice(item?.price?.amount / 6)}</p>
           <a href="#">Ver los medios de pago</a>
         </div>
       </div>
