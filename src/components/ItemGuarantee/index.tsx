@@ -17,7 +17,7 @@ const ItemGuarantee: React.FC<FCItemDetail> = ({ item }) => {
         <FaTrophy className='Icon' />
         <p>Mercado Puntos<span>. Sumás 2151 puntos.</span></p>
       </div>
-      {item.warranty &&
+      {item?.warranty &&
         <div>
           <FaAward className='Icon' />
           <p>12 meses de garantía de fábrica</p>

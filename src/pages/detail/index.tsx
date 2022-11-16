@@ -1,29 +1,32 @@
 import { useParams } from 'react-router-dom'
-import { ItemDetail } from '@/vite-env.d'
+import useGetItemDetail from '@/hooks/useGetItemDetail'
+
 import ItemInfo from '@/components/ItemInfo'
 import ItemPurchase from '@/containers/ItemPurchase'
 import SellerInfo from '@/components/SellerInfo'
+import { ItemDetail } from '@/vite-env.d'
 import './styles.sass'
 
 const DetailPage = () => {
   const { id } = useParams()
+  const { item, loading, error } = useGetItemDetail(id)
 
   return (
     <main className='DetailPage'>
       <section className='Detail-container'>
         <div className='Detail-container--images'>
-          <img src={item.picture} alt={item.title} />
+          <img src={item?.picture} alt={item?.title} />
         </div>
 
-        <ItemInfo item={item} />
+        <ItemInfo item={item!} />
 
-        <ItemPurchase item={item} />
+        <ItemPurchase item={item!} />
       </section>
 
       <section className='Description-container'>
         <div>
           <h1>Descripción</h1>
-          <p>{item.description}</p>
+          <p>{item?.description}</p>
         </div>
 
         <SellerInfo seller={seller} />
@@ -32,7 +35,7 @@ const DetailPage = () => {
   )
 }
 
-const item: ItemDetail = {
+const item2: ItemDetail = {
   id: 'MLA930801548',
   title: 'Apple Iphone 12 (128GB) - Azul',
   price: {

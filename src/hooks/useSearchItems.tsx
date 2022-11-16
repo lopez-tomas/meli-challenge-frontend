@@ -11,7 +11,7 @@ const useSearchItems = (search: string | null = '') => {
   useEffect(() => {
     setLoading(true)
 
-    fetch(`${import.meta.env.VITE_API_SEARCH_URL}?q=${search}`)
+    fetch(`${import.meta.env.VITE_BACKEND_URL}?q=${search}`)
       .then(response => response.json())
       .then(data => {
         setAuthor(data.author)
@@ -24,8 +24,6 @@ const useSearchItems = (search: string | null = '') => {
 
     setLoading(false)
   }, [search])
-  // const response = await fetch(`${import.meta.env.VITE_API_SEARCH_URL}?q=${search}`)
-  // const data = await response.json()
 
   return {
     author,

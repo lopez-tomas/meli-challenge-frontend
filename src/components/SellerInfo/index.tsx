@@ -15,24 +15,24 @@ const SellerInfo: React.FC<Props> = ({ seller }) => {
           <FaMapMarkerAlt />
           <div>
             <p>Ubicación</p>
-            <p>{seller.location}</p>
+            <p>{seller?.location}</p>
           </div>
         </div>
 
         <div className='SellerInfo-title'>
           <FaAward className='AwardIcon' />
           <div>
-            <p>MercadoLíder {seller.title}</p>
+            <p>MercadoLíder {seller?.title}</p>
             <p>¡Es uno de los mejores del sitio!</p>
           </div>
         </div>
 
         <div className='SellerInfo-level'>
-          {seller.level}
+          {seller?.level}
         </div>
       </div>
 
-      <style jsx>{`
+      <style jsx="true">{`
         .AwardIcon {
           color: #00a650;
         }
