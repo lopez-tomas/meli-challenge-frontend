@@ -1,5 +1,22 @@
 $green: #00a650
 
+$level_container_height: 12px
+$level_height: 8px
+
+// Color levels (not active)
+$first_level: #fff0f0
+$second_level: #fff5e8
+$third_level: #fffcda
+$fourth_level: #f1fdd7
+$fifth_level: #edf8ee
+
+// Colors levels (active)
+$first_level--active: #ff605a
+$second_level--active: #ffb656
+$third_level--active: #fff044
+$fourth_level--active: #bbff1f
+$fifth_level--active: #39b54a
+
 .SellerInfo
   padding: 16px
 
@@ -39,3 +56,39 @@ $green: #00a650
       div
         p:first-child
           color: $green
+
+    div.SellerInfo-level
+      .SellerInfo-level--container
+        display: flex
+        align-items: center
+        height: $level_container_height
+        width: 100%
+
+        .Levels
+          height: $level_height
+          width: 20%
+
+          &#level-1, &#level-2, &#level-3, &#level-4, &#level-5
+            &.active
+              height: $level_container_height
+
+          &#level-1
+            background-color: $first_level
+            &.active
+              background-color: $first_level--active
+          &#level-2
+            background-color: $second_level
+            &.active
+              background-color: $second_level--active
+          &#level-3
+            background-color: $third_level
+            &.active
+              background-color: $third_level--active
+          &#level-4
+            background-color: $fourth_level
+            &.active
+              background-color: $fourth_level--active
+          &#level-5
+            background-color: $fifth_level
+            &.active
+              background-color: $fifth_level--active

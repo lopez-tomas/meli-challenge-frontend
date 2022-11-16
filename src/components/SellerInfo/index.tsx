@@ -1,5 +1,6 @@
 import { ISeller } from '@/vite-env';
 import { FaMapMarkerAlt, FaAward } from 'react-icons/fa'
+import { getLevelNumber } from '@/utils/'
 import './styles.sass'
 
 interface Props {
@@ -7,6 +8,8 @@ interface Props {
 }
 
 const SellerInfo: React.FC<Props> = ({ seller }) => {
+  const levelNumber = getLevelNumber(seller?.level)
+
   return (
     <article className='SellerInfo'>
       <div className='SellerInfo-container'>
@@ -29,7 +32,13 @@ const SellerInfo: React.FC<Props> = ({ seller }) => {
         </div>
 
         <div className='SellerInfo-level'>
-          {seller?.level}
+          <ul className='SellerInfo-level--container'>
+            <li id='level-1' className={`Levels ${levelNumber == '1' && 'active'}`}></li>
+            <li id='level-2' className={`Levels ${levelNumber == '2' && 'active'}`}></li>
+            <li id='level-3' className={`Levels ${levelNumber == '3' && 'active'}`}></li>
+            <li id='level-4' className={`Levels ${levelNumber == '4' && 'active'}`}></li>
+            <li id='level-5' className={`Levels ${levelNumber == '5' && 'active'}`}></li>
+          </ul>
         </div>
       </div>
 
