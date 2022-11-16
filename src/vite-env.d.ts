@@ -38,6 +38,12 @@ export interface ISeller {
   }
 }
 
+export interface Installments {
+  quantity: number;
+  amount: number;
+  rate: number;
+}
+
 export interface Item {
   id: string;
   title: string;
@@ -50,6 +56,7 @@ export interface Item {
   condition: string;
   free_shipping: boolean;
   seller: ISeller;
+  installments: Installments;
 }
 
 export interface IResults {
