@@ -1,8 +1,9 @@
+import { ISeller } from '@/vite-env';
 import { FaMapMarkerAlt, FaAward } from 'react-icons/fa'
 import './styles.sass'
 
 interface Props {
-  seller: any;
+  seller: ISeller;
 }
 
 const SellerInfo: React.FC<Props> = ({ seller }) => {
@@ -15,7 +16,7 @@ const SellerInfo: React.FC<Props> = ({ seller }) => {
           <FaMapMarkerAlt />
           <div>
             <p>Ubicación</p>
-            <p>{seller?.location}</p>
+            <p>{seller?.location?.city}, {seller?.location?.state}</p>
           </div>
         </div>
 
