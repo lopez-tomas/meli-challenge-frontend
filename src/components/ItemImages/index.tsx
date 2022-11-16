@@ -12,7 +12,7 @@ const ItemImages: React.FC<Props> = ({ title, thumbnail, pictures }) => {
     <article className='ItemImages'>
       <div className='ItemImages-container'>
         <div className='ItemImages-pictures--container'>
-          {pictures.map(picture => (
+          {pictures?.map(picture => (
             <div className='ItemImages-pictures'>
               <img
                 className='ItemImages-pictures--pic'
