@@ -1,11 +1,16 @@
-import { FCItemDetail } from '@/vite-env'
+import { ItemDetail, ISeller } from '@/vite-env'
 import './styles.sass'
 
-const ItemSeller: React.FC<FCItemDetail> = ({ item }) => {
+interface Props {
+  item: ItemDetail;
+  seller: ISeller;
+}
+
+const ItemSeller: React.FC<Props> = ({ item, seller }) => {
   return (
     <div className='ItemSeller'>
-      <p className='ItemSeller-nickname'>Vendido por <span>`item.seller.nickname`</span></p>
-      <p className='ItemSeller-separator'>MercadoLider <span>|</span> XXX ventas</p>
+      <p className='ItemSeller-nickname'>Vendido por <span>{seller?.nickname}</span></p>
+      <p className='ItemSeller-separator'>MercadoLider <span>|</span> {seller?.sales?.completed} ventas</p>
       <p className='ItemSeller-bill'>Hace `item.installments.factura`</p>
     </div>
   )
