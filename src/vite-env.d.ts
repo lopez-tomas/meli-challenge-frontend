@@ -6,6 +6,22 @@ declare module '*.sass' {
   export = content;
 }
 
+export interface IAuthor {
+  name: string;
+  lastname: string;
+}
+
+export interface ICategory {
+  id: string;
+  name: string;
+  type: string;
+  values: [{
+    id: string,
+    name: string,
+    results: number,
+  }]
+}
+
 export interface Item {
   id: string;
   title: string;
@@ -17,6 +33,12 @@ export interface Item {
   picture: string;
   condition: string;
   free_shipping: boolean;
+}
+
+export interface IResults {
+  author: Author;
+  categories: Category[];
+  items: Item[];
 }
 
 export interface ItemDetail extends Item {
