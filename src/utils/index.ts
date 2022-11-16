@@ -5,6 +5,23 @@ const clearURL = (url: string): string => {
           .replace(/[^a-z0-9-]/g, '')
 }
 
+const formatPrice = (price: number): string => {
+  const nf = new Intl.NumberFormat("es-AR")
+
+  return nf.format(price)
+}
+
+const itemAvailableQuantity = (quantity: number): string => {
+  return quantity > 1 ? 'disponibles' : 'disponible'
+}
+
+const soldQuantityText = (sold_quantity: number): string => {
+  return sold_quantity > 1 || sold_quantity == 0 ? 'vendidos' : 'vendido'
+}
+
 export {
   clearURL,
+  formatPrice,
+  itemAvailableQuantity,
+  soldQuantityText
 }
