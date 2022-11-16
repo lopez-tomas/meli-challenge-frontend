@@ -22,6 +22,22 @@ export interface ICategory {
   }]
 }
 
+export interface ISeller {
+  id: string | number;
+  nickname: string;
+  title: string | null;
+  level: string;
+  sales: {
+    period: string;
+    completed: number;
+  }
+  location: {
+    city: string;
+    state: string;
+    country: string;
+  }
+}
+
 export interface Item {
   id: string;
   title: string;
@@ -33,6 +49,7 @@ export interface Item {
   picture: string;
   condition: string;
   free_shipping: boolean;
+  seller: ISeller;
 }
 
 export interface IResults {
@@ -42,9 +59,13 @@ export interface IResults {
 }
 
 export interface ItemDetail extends Item {
+  category: string;
   warranty: string;
   sold_quantity: number;
+  available_quantity: number;
   description: string;
+  attributes: any;
+  sale_terms: any;
 }
 
 export interface FCItemDetail {
