@@ -1,0 +1,23 @@
+$separation: 14px
+$pictures_height: 44px
+
+.ItemImages
+  padding: 16px
+
+  &-container
+    display: flex
+    align-items: center
+    padding: 26px 17px 0 17px
+
+    .ItemImages-pictures--container
+      display: flex
+      flex-direction: column
+
+      .ItemImages-pictures
+        width: $pictures_height
+        margin-bottom: $separation
+        border: 2px solid rgba(0, 0, 0, .25)
+        border-radius: 4px
+
+        &--pic
+          height: $pictures_height

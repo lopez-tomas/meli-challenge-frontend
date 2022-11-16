@@ -3,6 +3,7 @@ import { useParams, useLocation } from 'react-router-dom'
 import useGetItemDetail from '@/hooks/useGetItemDetail'
 import { ISeller, Installments } from '@/vite-env.d'
 
+import ItemImages from '@/components/ItemImages'
 import ItemInfo from '@/components/ItemInfo'
 import ItemPurchase from '@/containers/ItemPurchase'
 import SellerInfo from '@/components/SellerInfo'
@@ -33,9 +34,7 @@ const DetailPage = () => {
   return (
     <main className='DetailPage'>
       <section className='Detail-container'>
-        <div className='Detail-container--images'>
-          <img src={item?.picture} alt={item?.title} />
-        </div>
+        <ItemImages title={item?.title!} thumbnail={item?.picture!} pictures={item?.pictures!} />
 
         <ItemInfo item={item!} installments={installments} />
 
