@@ -44,6 +44,19 @@ export interface Installments {
   rate: number;
 }
 
+export interface ISaleTerms {
+  id: string;
+  name: string;
+  value_id: string | number;
+  value_name: string;
+  values: [
+    {
+      id: string;
+      name: string;
+    }
+  ]
+}
+
 export interface Item {
   id: string;
   title: string;
@@ -72,7 +85,7 @@ export interface ItemDetail extends Item {
   available_quantity: number;
   description: string;
   attributes: any;
-  sale_terms: any;
+  sale_terms: ISaleTerms[];
 }
 
 export interface FCItemDetail {
