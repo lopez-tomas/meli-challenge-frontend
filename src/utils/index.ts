@@ -19,9 +19,14 @@ const soldQuantityText = (sold_quantity: number): string => {
   return sold_quantity > 1 || sold_quantity == 0 ? 'vendidos' : 'vendido'
 }
 
+const getLevelNumber = (level: string): string => {
+  return level.split('_')[0]
+}
+
 export {
   clearURL,
   formatPrice,
   itemAvailableQuantity,
-  soldQuantityText
+  soldQuantityText,
+  getLevelNumber
 }
