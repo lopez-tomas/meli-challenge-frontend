@@ -33,11 +33,9 @@ const SellerInfo: React.FC<Props> = ({ seller }) => {
 
         <div className='SellerInfo-level'>
           <ul className='SellerInfo-level--container'>
-            <li id='level-1' className={`Levels ${levelNumber == '1' && 'active'}`}></li>
-            <li id='level-2' className={`Levels ${levelNumber == '2' && 'active'}`}></li>
-            <li id='level-3' className={`Levels ${levelNumber == '3' && 'active'}`}></li>
-            <li id='level-4' className={`Levels ${levelNumber == '4' && 'active'}`}></li>
-            <li id='level-5' className={`Levels ${levelNumber == '5' && 'active'}`}></li>
+            {levels.map((level, index) => (
+              <LevelItem key={index} level={levelNumber} compare={level} />
+            ))}
           </ul>
         </div>
       </div>
@@ -48,6 +46,19 @@ const SellerInfo: React.FC<Props> = ({ seller }) => {
         }
       `}</style>
     </article>
+  )
+}
+
+const levels = [ 1, 2, 3, 4, 5 ]
+
+interface ILevelItem {
+  level: string | number;
+  compare: number | string;
+}
+
+const LevelItem: React.FC<ILevelItem> = ({ level, compare }) => {
+  return (
+    <li id={`level-${compare}`} className={`Levels ${level == `${compare}` && 'active'}`}></li>
   )
 }
 
