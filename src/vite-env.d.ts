@@ -57,6 +57,15 @@ export interface ISaleTerms {
   ]
 }
 
+export interface IPictures {
+  id: string;
+  max_size: string;
+  quality: string;
+  secure_url: string;
+  size: string;
+  url: string;
+}
+
 export interface Item {
   id: string;
   title: string;
@@ -86,6 +95,7 @@ export interface ItemDetail extends Item {
   description: string;
   attributes: any;
   sale_terms: ISaleTerms[];
+  pictures: IPictures[];
 }
 
 export interface FCItemDetail {
