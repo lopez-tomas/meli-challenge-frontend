@@ -1,6 +1,13 @@
+$items-width--desktop: 65%
 $background-color: #ededed
 $container-background-color: #fff
 $radius: 4px
+
+$tablet-size: 768px
+$container-width--table: 90%
+
+$mobile-size: 425px
+$container-width--mobile: 100%
 
 .ResultsPage
   width: 100vw
@@ -10,7 +17,7 @@ $radius: 4px
 
   .Items, .Disclaimer
     height: 100%
-    width: 65%
+    width: $items-width--desktop
     margin: 0 auto
     border-radius: $radius
     background-color: $container-background-color
@@ -27,3 +34,13 @@ $radius: 4px
       margin-left: 9px
       opacity: .55
       font-size: .7rem
+
+@media screen and (max-width: $tablet-size)
+  .ResultsPage
+    .Items, .Disclaimer
+      width: $container-width--table
+
+@media screen and (max-width: $mobile-size)
+  .ResultsPage
+    .Items, .Disclaimer
+      width: $container-width--mobile
