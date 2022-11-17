@@ -1,5 +1,5 @@
-$container-width: 1200px
-$container-height: 40px
+$container-width: 87.5%
+$container-height: 10%
 $logo-width: 134px
 $form-width: 598px
 $ad-width: 340px
@@ -61,3 +61,12 @@ $padding: 8px
 
     .Meli-ad
       width: $ad-width
+
+@media screen and (max-width: 768px)
+  .SearchPage
+    &-container
+      .Meli-logo, .Meli-ad
+        display: none
+      .Search-form
+        width: 100%
+        margin: 0 auto
