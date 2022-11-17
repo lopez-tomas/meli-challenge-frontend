@@ -5,15 +5,22 @@ import { formatPrice } from '@/utils/'
 import './index.sass'
 
 interface Props {
-  data: ItemInterface
+  data: ItemInterface;
+  category: string | null;
+  search: string;
 }
 
-const Item: React.FC<Props> = ({ data })=> {
+const Item: React.FC<Props> = ({ data, category, search })=> {
   return (
     <article className='Item'>
       <Link
         to={`/items/${data.id}`}
-        state={{ seller: data.seller, installments: data.installments }}
+        state={{
+          seller: data.seller,
+          installments: data.installments,
+          category: category,
+          search: search
+        }}
         title={data.title}
         className='Item-img'
       >
@@ -22,7 +29,12 @@ const Item: React.FC<Props> = ({ data })=> {
       <div className='Item-info'>
         <Link
           to={`/items/${data.id}`}
-          state={{ seller: data.seller, installments: data.installments }}
+          state={{
+            seller: data.seller,
+            installments: data.installments,
+            category: category,
+            search: search
+          }}
           title={data.title}
           className='Item-info--title'
         >
@@ -30,7 +42,12 @@ const Item: React.FC<Props> = ({ data })=> {
         </Link>
         <Link
           to={`/items/${data.id}`}
-          state={{ seller: data.seller, installments: data.installments }}
+          state={{
+            seller: data.seller,
+            installments: data.installments,
+            category: category,
+            search: search
+          }}
           className='Item-info--price'
         >
           $ {formatPrice(data.price.amount)}
