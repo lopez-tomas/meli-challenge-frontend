@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import useSearchItemsByQuery from '@/hooks/useSearchItemsByQuery'
 import { IAuthor, ICategory, Item as ItemInterface } from '@/vite-env.d'
 import Breadcrumb from '@/components/Breadcrumb'
+import Loading from '@/components/Loading'
 import Item from '@/components/Item'
 
 import { FaInfoCircle } from 'react-icons/fa'
@@ -27,6 +28,12 @@ const ResultsPage = () => {
     loading,
     error
   }: ICustomHook = useSearchItemsByQuery(search)
+
+  if (loading) {
+    return (
+      <Loading message={'Buscando...'} />
+    )
+  }
 
   return (
     <main className='ResultsPage'>

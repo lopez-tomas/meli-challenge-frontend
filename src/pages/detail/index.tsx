@@ -3,6 +3,7 @@ import { useParams, useLocation } from 'react-router-dom'
 import useGetItemDetail from '@/hooks/useGetItemDetail'
 import { ISeller, Installments } from '@/vite-env.d'
 
+import Loading from '@/components/Loading'
 import Breadcrumb from '@/components/Breadcrumb'
 import ItemImages from '@/components/ItemImages'
 import ItemInfo from '@/components/ItemInfo'
@@ -26,11 +27,7 @@ const DetailPage = () => {
 
   if (loading) {
     return (
-      <main className='DetailPage'>
-        <section className='Detail-container'>
-          <p>Cargando...</p>
-        </section>
-      </main>
+      <Loading message={'Cargando producto...'} />
     )
   }
 
