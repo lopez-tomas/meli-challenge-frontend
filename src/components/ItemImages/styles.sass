@@ -1,5 +1,6 @@
 $separation: 14px
 $pictures_height: 44px
+$laptop-size: 1024px
 
 .ItemImages
   padding: 16px
@@ -21,3 +22,9 @@ $pictures_height: 44px
 
         &--pic
           height: $pictures_height
+
+@media screen and (max-width: $laptop-size)
+  .ItemImages
+    &-container
+      .ItemImages-pictures--container
+        display: none

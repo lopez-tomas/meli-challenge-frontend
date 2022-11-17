@@ -47,7 +47,7 @@ const DetailPage = () => {
       </section>
 
       <section className='Description-container'>
-        <div>
+        <div className='Description'>
           <h1>Descripción</h1>
           <p>{item?.description}</p>
         </div>

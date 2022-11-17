@@ -1,3 +1,5 @@
+$laptop-size: 1024px
+
 .ItemPurchase
   padding: 16px
 
@@ -5,3 +7,8 @@
     padding: 26px 17px
     border: thin solid #ededed
     border-radius: 8px
+
+@media screen and (max-width: $laptop-size)
+  .ItemPurchase
+    &-container
+      border: none

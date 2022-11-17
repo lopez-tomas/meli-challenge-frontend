@@ -3,6 +3,7 @@ $blue: #3483fa
 $blueHover: #2a6acb
 $height: 83px
 $separation: 8px
+$laptop-size: 1024px
 
 .ItemShipment
   display: flex
@@ -36,3 +37,9 @@ $separation: 8px
           font-size: 14px
           &:hover
             color: $blueHover
+
+@media screen and (max-width: $laptop-size)
+  .ItemShipment
+    div
+      &.ItemShipment-left
+        width: 5%

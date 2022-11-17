@@ -1,4 +1,5 @@
 $green: #00a650
+$laptop-size: 1024px
 
 $level_container_height: 12px
 $level_height: 8px
@@ -92,3 +93,10 @@ $fifth_level--active: #39b54a
             background-color: $fifth_level
             &.active
               background-color: $fifth_level--active
+
+@media screen and (max-width: $laptop-size)
+  .SellerInfo
+    grid-area: seller-info
+
+    div.SellerInfo-container
+      border: none

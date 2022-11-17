@@ -1,5 +1,6 @@
 $blue: #3483fa
 $blue-hover: #2968c8
+$laptop-size: 1024px
 
 .Breadcrumb
   display: flex
@@ -25,3 +26,7 @@ $blue-hover: #2968c8
     color: #666
     &:hover
       color: rgba(0, 0, 0, 0.9)
+
+@media screen and (max-width: $laptop-size)
+  .Breadcrumb
+    display: none
