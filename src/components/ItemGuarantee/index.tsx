@@ -20,7 +20,7 @@ const ItemGuarantee: React.FC<FCItemDetail> = ({ item }) => {
       {item?.warranty &&
         <div>
           <FaAward className='Icon' />
-          <p>12 meses de garantía de fábrica</p>
+          <p>{item?.warranty}</p>
         </div>
       }
       <style jsx="true">{`

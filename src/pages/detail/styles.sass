@@ -52,6 +52,18 @@ $radius: 4px
       width: 100%
       border-radius: 0
 
+    .Detail-container
+      grid-template-areas: "image image" "image image" "info purchase" "extra purchase"
+      grid-template-columns: 1fr 1fr
+      grid-template-rows: repeat(4, auto)
+
+      .ItemImages
+        grid-area: image
+      .ItemInfo
+        grid-area: info
+      .ItemPurchase
+        grid-area: purchase
+
     .Description-container
       padding: 0
       grid-template-areas: "seller-info" "description"
@@ -63,6 +75,12 @@ $radius: 4px
 
 @media screen and (max-width: $tablet-size)
   .DetailPage
+
+    .Detail-container
+      grid-template-areas: "image" "info" "purchase"
+      grid-template-columns: 1fr
+      grid-template-rows: repeat(3, auto)
+
     .Description-container
       .Description
         p
