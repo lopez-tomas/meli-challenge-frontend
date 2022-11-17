@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Item as ItemInterface } from '@/vite-env.d'
 import { formatPrice } from '@/utils/'
-import './index.sass'
+import './styles.sass'
 
 interface Props {
   data: ItemInterface;

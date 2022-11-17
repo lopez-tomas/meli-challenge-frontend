@@ -6,7 +6,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import Item from '@/components/Item'
 
 import { FaInfoCircle } from 'react-icons/fa'
-import './index.sass'
+import './styles.sass'
 
 interface ICustomHook {
   author: IAuthor;

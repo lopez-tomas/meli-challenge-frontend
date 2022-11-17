@@ -4,7 +4,7 @@ import { FaSearch } from 'react-icons/fa'
 import { clearURL } from '@/utils'
 
 import logo from '@/assets/images/meli-logo.png'
-import './index.sass'
+import './styles.sass'
 
 const adImage = "https://http2.mlstatic.com/D_NQ_887100-MLA50801817839_072022-OO.webp"
 
