@@ -27,11 +27,16 @@ const SearchPage = () => {
     })
   }
 
+  const handleClick = (e: any) => {
+    e.preventDefault()
+    navigate('/')
+  }
+
   return (
     <>
       <header className='SearchPage'>
         <div className='SearchPage-container'>
-          <a href="#" className='Meli-logo'>
+          <a onClick={handleClick} href="/" className='Meli-logo'>
             <img
               src={logo}
               alt="Logo Mercado Libre"
