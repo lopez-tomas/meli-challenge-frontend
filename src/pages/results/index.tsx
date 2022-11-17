@@ -2,6 +2,7 @@ import { useSearchParams } from 'react-router-dom'
 
 import useSearchItemsByQuery from '@/hooks/useSearchItemsByQuery'
 import { IAuthor, ICategory, Item as ItemInterface } from '@/vite-env.d'
+import Breadcrumb from '@/components/Breadcrumb'
 import Item from '@/components/Item'
 
 import { FaInfoCircle } from 'react-icons/fa'
@@ -29,9 +30,7 @@ const ResultsPage = () => {
 
   return (
     <main className='ResultsPage'>
-      <section className='Items'>
-        {categories.length > 0 && categories[0]?.name}
-      </section>
+      {categories?.length > 0 && <Breadcrumb search={search!} category={categories[0]?.name} />}
 
       <section className='Items'>
         {loading && <div>Cargando...</div>}
@@ -39,7 +38,12 @@ const ResultsPage = () => {
         {error && <div>Ocurrió un error</div>}
 
         {!loading && !error && items?.map((item) => (
-          <Item key={item.id} data={item} />
+          <Item
+            key={item.id}
+            data={item}
+            category={categories?.length > 0 ? categories[0]?.name : ''}
+            search={search!}
+          />
         ))}
       </section>
 
