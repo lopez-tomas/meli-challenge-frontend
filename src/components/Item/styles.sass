@@ -1,5 +1,20 @@
 $item-height: 200px
 
+$tablet-size: 768px
+$mobile-size: 425px
+
+$title-font-size--desktop: 1.2rem
+$title-font-size--tablet: 1.1rem
+$title-font-size--mobile: 1rem
+
+$price-font-size--desktop: 1.5rem
+$price-font-size--tablet: 1.4rem
+$price-font-size--mobile: 1.3rem
+
+$shipment-font-size--desktop: .8rem
+$shipment-font-size--tablet: .7rem
+$shipment-font-size--mobile: .6rem
+
 .Item
   display: flex
   justify-content: flex-start
@@ -19,21 +34,41 @@ $item-height: 200px
 
     &--title
       margin-bottom: 10px
-      font-size: 20px
+      font-size: $title-font-size--desktop
       font-weight: light
       color: #333
       opacity: 0.9
 
     &--price
       margin-bottom: 12px
-      font-size: 24px
+      font-size: $price-font-size--desktop
       color: #333
 
     &--shipment
       width: fit-content
       padding: 4px 5px
-      font-size: 14px
+      font-size: $shipment-font-size--desktop
       line-height: 14px
       color: #00a650
       background-color: #e6f7ee
       border-radius: 4px
+
+@media screen and (max-width: $tablet-size)
+  .Item
+    &-info
+      &--title
+        font-size: $title-font-size--tablet
+      &--price
+        font-size: $price-font-size--tablet
+      &--shipment
+        font-size: $shipment-font-size--tablet
+
+@media screen and (max-width: $mobile-size)
+  .Item
+    &-info
+      &--title
+        font-size: $title-font-size--mobile
+      &--price
+        font-size: $price-font-size--mobile
+      &--shipment
+        font-size: $shipment-font-size--mobile
