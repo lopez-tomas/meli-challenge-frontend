@@ -3,7 +3,7 @@ import { ItemDetail } from '@/vite-env'
 
 const useGetItemDetail = (id: ItemDetail['id'] | null = '') => {
   const [item, setItem] = useState<ItemDetail | null>(null)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
 
   useEffect(() => {
@@ -13,12 +13,12 @@ const useGetItemDetail = (id: ItemDetail['id'] | null = '') => {
       .then(response => response.json())
       .then(data => {
         setItem(data.item)
+        setLoading(false)
       })
       .catch(err => {
         setError(true)
       })
 
-    setLoading(false)
   }, [id])
 
   return {

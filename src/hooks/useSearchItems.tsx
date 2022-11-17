@@ -5,7 +5,7 @@ const useSearchItems = (search: string | null = '') => {
   const [author, setAuthor] = useState<IAuthor>({ name: '', lastname: '' })
   const [categories, setCategories] = useState<ICategory[]>([])
   const [items, setItems] = useState<ItemInterface[]>([])
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
 
   useEffect(() => {
@@ -17,12 +17,12 @@ const useSearchItems = (search: string | null = '') => {
         setAuthor(data.author)
         setCategories(data.categories)
         setItems(data.items)
+        setLoading(false)
       })
       .catch(err => {
         setError(true)
       })
 
-    setLoading(false)
   }, [search])
 
   return {
