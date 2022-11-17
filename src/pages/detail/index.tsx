@@ -14,8 +14,8 @@ const DetailPage = () => {
   const { item, loading, error } = useGetItemDetail(id)
 
   const location = useLocation()
-  const seller: ISeller = location.state.seller
-  const installments: Installments = location.state.installments
+  const seller: ISeller = location.state?.seller
+  const installments: Installments = location.state?.installments
 
   useEffect(() => {
     window.scrollTo({ top: 0 })

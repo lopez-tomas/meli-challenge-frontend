@@ -27,7 +27,7 @@ const ItemInfo: React.FC<Props> = ({ item, installments }) => {
             $ {formatPrice(item?.price?.amount)}
           </h2>
           <p className='ItemInfo-price--installments'>
-            en {installments.quantity}x $ {formatPrice(installments.amount)}
+            en {installments?.quantity}x $ {formatPrice(installments?.amount)}
           </p>
           <a href="#">Ver los medios de pago</a>
         </div>

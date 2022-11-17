@@ -20,7 +20,7 @@ const soldQuantityText = (sold_quantity: number): string => {
 }
 
 const getLevelNumber = (level: string): string => {
-  return level.split('_')[0]
+  return level ? level.split('_')[0] : ''
 }
 
 export {

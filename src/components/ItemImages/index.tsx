@@ -13,10 +13,9 @@ const ItemImages: React.FC<Props> = ({ title, thumbnail, pictures }) => {
       <div className='ItemImages-container'>
         <div className='ItemImages-pictures--container'>
           {pictures?.map(picture => (
-            <div className='ItemImages-pictures'>
+            <div key={picture.id} className='ItemImages-pictures'>
               <img
                 className='ItemImages-pictures--pic'
-                key={picture.id}
                 src={picture.url}
                 alt={`${title}-${picture.id}`}
               />
