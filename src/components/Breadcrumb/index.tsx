@@ -18,14 +18,27 @@ const Breadcrumb: React.FC<Props> = ({ search, category, itemCategory, width }) 
   }
 
   if (!category) {
-    return (<></>)
+    return (
+      <section className='Breadcrumb'>
+        <div className='Breadcrumb-container'>
+          <a href={`/items?search=${search}`} className='Breadcrumb-go-back' onClick={e => goBackToResults(e)}>Volver al listado</a>
+        </div>
+        <style jsx='true'>{`
+          ${width &&
+            `.Breadcrumb {
+              width: ${width};
+            }`
+          }
+        `}</style>
+      </section>
+    )
   }
 
   if (itemCategory) {
     return (
       <section className='Breadcrumb'>
         <div className='Breadcrumb-container'>
-          <a href='#' className='Breadcrumb-go-back' onClick={e => goBackToResults(e)}>Volver al listado</a>
+          <a href={`/items?search=${search}`} className='Breadcrumb-go-back' onClick={e => goBackToResults(e)}>Volver al listado</a>
           <span className='Breadcrumb-separator pipe'>|</span>
           <a href='#' className='Breadcrumb-category'>{category}</a>
           <span className='Breadcrumb-separator'>{'>'}</span>
