@@ -1,4 +1,6 @@
-import { ItemDetail, IPictures } from '@/vite-env';
+import { useState } from 'react'
+import { ItemDetail, IPictures } from '@/vite-env'
+import Image from '@/components/Image'
 import './styles.sass'
 
 interface Props {
@@ -8,22 +10,36 @@ interface Props {
 }
 
 const ItemImages: React.FC<Props> = ({ title, thumbnail, pictures }) => {
+  const [selectedImage, setSelectedImage] = useState('')
+  const [selectedImageTitle, setSelectedImageTitle] = useState('')
+
   return (
     <article className='ItemImages'>
       <div className='ItemImages-container'>
         <div className='ItemImages-pictures--container'>
+          <Image
+            picture={thumbnail}
+            title={title}
+            changeSelectedImage={setSelectedImage}
+            changeSelectedImageTitle={setSelectedImageTitle}
+          />
+
           {pictures?.map(picture => (
-            <div key={picture.id} className='ItemImages-pictures'>
-              <img
-                className='ItemImages-pictures--pic'
-                src={picture.url}
-                alt={`${title}-${picture.id}`}
-              />
-            </div>
+            <Image
+              key={picture.id}
+              picture={picture.url}
+              title={`${title}-${picture.id}`}
+              changeSelectedImage={setSelectedImage}
+              changeSelectedImageTitle={setSelectedImageTitle}
+            />
           ))}
         </div>
 
-        <img className='ItemImages-thumbnail' src={thumbnail} alt={title} />
+        <img
+          className='ItemImages-thumbnail'
+          src={selectedImage != '' ? selectedImage : thumbnail}
+          alt={selectedImageTitle != '' ? selectedImageTitle : title}
+        />
       </div>
     </article>
   )

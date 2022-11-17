@@ -1,9 +1,13 @@
 $separation: 14px
 $pictures_height: 44px
 $laptop-size: 1024px
+$tablet-size: 768px
 
 .ItemImages
   padding: 16px
+
+  &-slideshow
+    display: none
 
   &-container
     display: flex
@@ -22,8 +26,13 @@ $laptop-size: 1024px
 
         &--pic
           height: $pictures_height
+          cursor: pointer
 
 @media screen and (max-width: $laptop-size)
+  .ItemImages
+    &-container
+
+@media screen and (max-width: $tablet-size)
   .ItemImages
     &-container
       .ItemImages-pictures--container
