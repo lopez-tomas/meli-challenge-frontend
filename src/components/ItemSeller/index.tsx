@@ -13,10 +13,7 @@ const ItemSeller: React.FC<Props> = ({ item, seller }) => {
     <div className='ItemSeller'>
       <p className='ItemSeller-nickname'>Vendido por <span>{seller?.nickname}</span></p>
       <p className='ItemSeller-separator'>MercadoLider <span>|</span> {seller?.sales?.completed} ventas</p>
-      { bill
-          &&
-            <p className='ItemSeller-bill'>Hace {bill?.value_name}</p>
-      }
+      { bill && <p className='ItemSeller-bill'>Hace {bill?.value_name}</p> }
     </div>
   )
 }

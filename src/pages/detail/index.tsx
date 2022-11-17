@@ -47,7 +47,7 @@ const DetailPage = () => {
           <p>{item?.description}</p>
         </div>
 
-        <SellerInfo seller={seller} />
+        {seller && <SellerInfo seller={seller} />}
       </section>
     </main>
   )
