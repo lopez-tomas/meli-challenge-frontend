@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import './styles.sass'
 
 interface ImageProps {
   picture: string;
@@ -32,10 +33,7 @@ const Image: React.FC<ImageProps> = ({
   }
 
   return (
-    <div
-      ref={imgDiv}
-      className='Image'
-      >
+    <div ref={imgDiv} className='Image'>
       <img
         onMouseOver={handleHover}
         onMouseOut={handleHoverOut}
