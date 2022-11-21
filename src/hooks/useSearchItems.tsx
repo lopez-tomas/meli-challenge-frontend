@@ -11,7 +11,7 @@ const useSearchItems = (search: string | null = '') => {
   useEffect(() => {
     setLoading(true)
 
-    fetch(`${import.meta.env.VITE_BACKEND_URL}?q=${search}`)
+    fetch(`${import.meta.env.VITE_LOCAL_BACKEND_URL}?q=${search}`)
       .then(response => response.json())
       .then(data => {
         setAuthor(data.author)

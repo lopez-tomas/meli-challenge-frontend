@@ -9,7 +9,7 @@ const useGetItemDetail = (id: ItemDetail['id'] | null = '') => {
   useEffect(() => {
     setLoading(true)
 
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/${id}`)
+    fetch(`${import.meta.env.VITE_LOCAL_BACKEND_URL}/${id}`)
       .then(response => response.json())
       .then(data => {
         setItem(data.item)
