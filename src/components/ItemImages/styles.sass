@@ -1,39 +1,9 @@
-$separation: 14px
-$pictures_height: 44px
-$laptop-size: 1024px
 $tablet-size: 768px
 
-.ItemImages
-  padding: 16px
-
-  &-slideshow
-    display: none
-
-  &-container
-    display: flex
-    align-items: center
-    padding: 26px 17px 0 17px
-
-    .ItemImages-pictures--container
-      display: flex
-      flex-direction: column
-
-      .ItemImages-pictures
-        width: $pictures_height
-        margin-bottom: $separation
-        border: 2px solid rgba(0, 0, 0, .25)
-        border-radius: 4px
-
-        &--pic
-          height: $pictures_height
-          cursor: pointer
-
-@media screen and (max-width: $laptop-size)
-  .ItemImages
-    &-container
+.ItemImages-pictures
+  display: flex
+  flex-direction: column
 
 @media screen and (max-width: $tablet-size)
-  .ItemImages
-    &-container
-      .ItemImages-pictures--container
-        display: none
+  .ItemImages-pictures
+    display: none
