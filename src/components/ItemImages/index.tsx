@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import { ItemDetail, IPictures } from '@/vite-env'
+import Article from '@/containers/Article'
 import Image from '@/components/Image'
+
+import { ItemDetail, IPictures } from '@/vite-env'
 import './styles.sass'
 
 interface Props {
@@ -14,34 +16,32 @@ const ItemImages: React.FC<Props> = ({ title, thumbnail, pictures }) => {
   const [selectedImageTitle, setSelectedImageTitle] = useState('')
 
   return (
-    <article className='ItemImages'>
-      <div className='ItemImages-container'>
-        <div className='ItemImages-pictures--container'>
+    <Article name='image' flex>
+      <div className='ItemImages-pictures'>
+        <Image
+          picture={thumbnail}
+          title={title}
+          changeSelectedImage={setSelectedImage}
+          changeSelectedImageTitle={setSelectedImageTitle}
+        />
+
+        {pictures?.map(picture => (
           <Image
-            picture={thumbnail}
-            title={title}
+            key={picture.id}
+            picture={picture.url}
+            title={`${title}-${picture.id}`}
             changeSelectedImage={setSelectedImage}
             changeSelectedImageTitle={setSelectedImageTitle}
           />
-
-          {pictures?.map(picture => (
-            <Image
-              key={picture.id}
-              picture={picture.url}
-              title={`${title}-${picture.id}`}
-              changeSelectedImage={setSelectedImage}
-              changeSelectedImageTitle={setSelectedImageTitle}
-            />
-          ))}
-        </div>
-
-        <img
-          className='ItemImages-thumbnail'
-          src={selectedImage != '' ? selectedImage : thumbnail}
-          alt={selectedImageTitle != '' ? selectedImageTitle : title}
-        />
+        ))}
       </div>
-    </article>
+
+      <img
+        className='ItemImages-thumbnail'
+        src={selectedImage != '' ? selectedImage : thumbnail}
+        alt={selectedImageTitle != '' ? selectedImageTitle : title}
+      />
+    </Article>
   )
 }
 
