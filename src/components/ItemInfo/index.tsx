@@ -1,3 +1,4 @@
+import Article from '@/containers/Article'
 import { ItemDetail, Installments } from '@/vite-env'
 import { formatPrice, soldQuantityText } from '@/utils/'
 import { FaRegHeart } from 'react-icons/fa'
@@ -10,34 +11,32 @@ interface Props {
 
 const ItemInfo: React.FC<Props> = ({ item, installments }) => {
   return (
-    <article className='ItemInfo'>
-      <div className='ItemInfo-container'>
-        <header className='ItemInfo-status'>
-          <div className='ItemInfo-status--condition'>
-            <p>{item?.condition} | {item?.sold_quantity} {soldQuantityText(item?.sold_quantity)}</p>
-            <FaRegHeart className='Heart-icon' />
-          </div>
-          <div className='ItemInfo-status--title'>
-            <h1>{item?.title}</h1>
-          </div>
-        </header>
-
-        <div className='ItemInfo-price'>
-          <h2 className='ItemInfo-price--total'>
-            $ {formatPrice(item?.price?.amount)}
-          </h2>
-          {installments
-            ?
-              <p className='ItemInfo-price--installments'>
-                en {installments?.quantity}x $ {formatPrice(installments?.amount)}
-              </p>
-            :
-              <p className='ItemInfo-price--installments'>
-                en 6x $ {formatPrice(item?.price?.amount / 6)}
-              </p>
-          }
-          <a href="#">Ver los medios de pago</a>
+    <Article name='info'>
+      <header className='ItemInfo-status'>
+        <div className='ItemInfo-status--condition'>
+          <p>{item?.condition} | {item?.sold_quantity} {soldQuantityText(item?.sold_quantity)}</p>
+          <FaRegHeart className='Heart-icon' />
         </div>
+        <div className='ItemInfo-status--title'>
+          <h1>{item?.title}</h1>
+        </div>
+      </header>
+
+      <div className='ItemInfo-price'>
+        <h2 className='ItemInfo-price--total'>
+          $ {formatPrice(item?.price?.amount)}
+        </h2>
+        {installments
+          ?
+            <p className='ItemInfo-price--installments'>
+              en {installments?.quantity}x $ {formatPrice(installments?.amount)}
+            </p>
+          :
+            <p className='ItemInfo-price--installments'>
+              en 6x $ {formatPrice(item?.price?.amount / 6)}
+            </p>
+        }
+        <a href="#">Ver los medios de pago</a>
       </div>
 
       <style jsx="true">{`
@@ -47,7 +46,7 @@ const ItemInfo: React.FC<Props> = ({ item, installments }) => {
           cursor: pointer;
         }
       `}</style>
-    </article>
+    </Article>
   )
 }
 

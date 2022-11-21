@@ -1,47 +1,40 @@
 $laptop-size: 1024px
 
-.ItemInfo
-  padding: 16px
 
-  &-container
-    padding: 26px 17px 0 17px
+.ItemInfo-status
+  display: flex
+  flex-direction: column
+  margin-bottom: 19px
 
-    .ItemInfo-status
-      display: flex
-      flex-direction: column
-      margin-bottom: 19px
+  &--condition
+    display: inherit
+    justify-content: space-between
+    margin-bottom: 9px
 
-      &--condition
-        display: inherit
-        justify-content: space-between
-        margin-bottom: 9px
+    p
+      font-size: 14px
+      opacity: 0.55
 
-        p
-          font-size: 14px
-          opacity: 0.55
+  &--title
+    h1
+      font-size: 22px
+      font-weight: normal
 
-      &--title
-        h1
-          font-size: 22px
-          font-weight: normal
+.ItemInfo-price
+  &--total
+    margin-bottom: 4px
+    font-size: 2.2rem
+    font-weight: normal
+    letter-spacing: normal
+    opacity: 0.9
 
-    .ItemInfo-price
-      &--total
-        margin-bottom: 4px
-        font-size: 2.2rem
-        font-weight: normal
-        letter-spacing: normal
-        opacity: 0.9
-
-      &--installments
-        margin-bottom: 7px
-        font-size: 1.2rem
-        opacity: 0.9
+  &--installments
+    margin-bottom: 7px
+    font-size: 1.2rem
+    opacity: 0.9
 
 @media screen and (max-width: $laptop-size)
-  .ItemInfo
-    &-container
-      .ItemInfo-status
-        &--condition
-          .Heart-icon
-            display: none
+  .ItemInfo-status
+    &--condition
+      .Heart-icon
+        display: none
