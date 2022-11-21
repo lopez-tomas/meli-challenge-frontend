@@ -34,12 +34,12 @@ const Image: React.FC<ImageProps> = ({
   return (
     <div
       ref={imgDiv}
-      className='ItemImages-pictures'
+      className='Image'
       >
       <img
         onMouseOver={handleHover}
         onMouseOut={handleHoverOut}
-        className='ItemImages-pictures--pic'
+        className='Image-pic'
         src={picture}
         alt={title}
       />

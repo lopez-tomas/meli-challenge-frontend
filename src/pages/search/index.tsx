@@ -1,5 +1,6 @@
-import React, { useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
+import Footer from '@/components/Footer'
 import { FaSearch } from 'react-icons/fa'
 import { clearURL } from '@/utils'
 
@@ -68,6 +69,8 @@ const SearchPage = () => {
       </header>
 
       <Outlet />
+
+      <Footer />
     </>
   )
 }
