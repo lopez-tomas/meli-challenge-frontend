@@ -57,11 +57,11 @@ $radius: 4px
       grid-template-columns: 1fr 1fr
       grid-template-rows: repeat(4, auto)
 
-      .ItemImages
+      .Article-image
         grid-area: image
-      .ItemInfo
+      .Article-info
         grid-area: info
-      .ItemPurchase
+      .Article-purchase
         grid-area: purchase
 
     .Description-container
@@ -75,7 +75,6 @@ $radius: 4px
 
 @media screen and (max-width: $tablet-size)
   .DetailPage
-
     .Detail-container
       grid-template-areas: "image" "info" "purchase"
       grid-template-columns: 1fr
