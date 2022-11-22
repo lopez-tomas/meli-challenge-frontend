@@ -5,10 +5,10 @@ import { ISeller, Installments } from '@/vite-env.d'
 
 import Loading from '@/components/Loading'
 import Breadcrumb from '@/components/Breadcrumb'
-import ItemImages from '@/components/ItemImages'
-import ItemInfo from '@/components/ItemInfo'
+import ItemImages from '@/containers/ItemImages'
+import ItemInfo from '@/containers/ItemInfo'
 import ItemPurchase from '@/containers/ItemPurchase'
-import SellerInfo from '@/components/SellerInfo'
+import SellerInfo from '@/containers/SellerInfo'
 import './styles.sass'
 
 const DetailPage = () => {
