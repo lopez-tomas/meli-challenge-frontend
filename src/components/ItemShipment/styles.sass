@@ -1,9 +1,8 @@
-$green: #00a650
-$blue: #3483fa
-$blueHover: #2a6acb
+@use '../../styles/modules/_colors'
+@use '../../styles/modules/_sizes'
+
 $height: 83px
 $separation: 8px
-$laptop-size: 1024px
 
 .ItemShipment
   display: flex
@@ -25,7 +24,7 @@ $laptop-size: 1024px
         margin-bottom: $separation
         &:first-child
           font-size: 16px
-          color: $green
+          color: colors.$green
         &:nth-child(2)
           font-size: 14px
           opacity: .55
@@ -33,12 +32,12 @@ $laptop-size: 1024px
       div
         justify-content: flex-start
         a
-          color: $blue
+          color: colors.$blue
           font-size: 14px
           &:hover
-            color: $blueHover
+            color: colors.$blue-hover
 
-@media screen and (max-width: $laptop-size)
+@media screen and (max-width: sizes.$laptop-size)
   .ItemShipment
     div
       &.ItemShipment-left

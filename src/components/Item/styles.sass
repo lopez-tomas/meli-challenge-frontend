@@ -1,7 +1,7 @@
-$item-height: 200px
+@use '../../styles/modules/_colors'
+@use '../../styles/modules/_sizes'
 
-$tablet-size: 768px
-$mobile-size: 425px
+$item-height: 200px
 
 $title-font-size--desktop: 1.2rem
 $title-font-size--tablet: 1.1rem
@@ -36,24 +36,24 @@ $shipment-font-size--mobile: .6rem
       margin-bottom: 10px
       font-size: $title-font-size--desktop
       font-weight: light
-      color: #333
+      color: colors.$black
       opacity: 0.9
 
     &--price
       margin-bottom: 12px
       font-size: $price-font-size--desktop
-      color: #333
+      color: colors.$black
 
     &--shipment
       width: fit-content
       padding: 4px 5px
       font-size: $shipment-font-size--desktop
       line-height: 14px
-      color: #00a650
-      background-color: #e6f7ee
-      border-radius: 4px
+      color: colors.$green
+      background-color: colors.$white
+      border-radius: sizes.$radius-md
 
-@media screen and (max-width: $tablet-size)
+@media screen and (max-width: sizes.$tablet-size)
   .Item
     &-info
       &--title
@@ -63,7 +63,7 @@ $shipment-font-size--mobile: .6rem
       &--shipment
         font-size: $shipment-font-size--tablet
 
-@media screen and (max-width: $mobile-size)
+@media screen and (max-width: sizes.$mobile-size)
   .Item
     &-info
       &--title

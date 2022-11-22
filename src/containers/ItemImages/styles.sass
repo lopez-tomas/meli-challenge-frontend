@@ -1,9 +1,9 @@
-$tablet-size: 768px
+@use '../../styles/modules/_sizes'
 
 .ItemImages-pictures
   display: flex
   flex-direction: column
 
-@media screen and (max-width: $tablet-size)
+@media screen and (max-width: sizes.$tablet-size)
   .ItemImages-pictures
     display: none

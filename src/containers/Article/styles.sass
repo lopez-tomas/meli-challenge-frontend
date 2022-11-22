@@ -1,5 +1,8 @@
+@use '../../styles/modules/_colors'
+@use '../../styles/modules/_sizes'
+
 .Article
-  padding: 16px
+  padding: sizes.$padding-md
 
   &-container
     padding: 26px 17px
@@ -9,5 +12,5 @@
   align-items: center
 
 .bordered
-  border: thin solid #ededed
-  border-radius: 8px
+  border: thin solid colors.$secondary-background-color
+  border-radius: sizes.$radius-lg

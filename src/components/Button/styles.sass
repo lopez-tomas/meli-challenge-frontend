@@ -1,8 +1,7 @@
-$main-background-color: #3483fa
-$main-background-color--hover: #2968c8
+@use '../../styles/modules/_colors'
+@use '../../styles/modules/_sizes'
+
 $secondary-background-color: rgba(65, 137, 230, 0.15)
-$main-text-color: #fff
-$secondary-text-color: $main-background-color
 
 .Button
   width: 100%
@@ -11,14 +10,14 @@ $secondary-text-color: $main-background-color
   padding: 0 24px
   border: none
   border-radius: 6px
-  color: $main-text-color
-  background-color: $main-background-color
+  color: colors.$white
+  background-color: colors.$blue
   font-size: 1rem
   font-weight: bold
 
   &:hover
-    background-color: $main-background-color--hover
+    background-color: colors.$blue-hover
 
 .secondary
-  color: $secondary-text-color
+  color: colors.$blue
   background-color: $secondary-background-color

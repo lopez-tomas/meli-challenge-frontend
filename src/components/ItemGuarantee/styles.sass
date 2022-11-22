@@ -1,5 +1,5 @@
-$blue: #3483fa
-$blue-hover: #2968c8
+@use '../../styles/modules/_colors'
+@use '../../styles/modules/_sizes'
 
 .ItemGuarantee
   display: flex
@@ -12,13 +12,13 @@ $blue-hover: #2968c8
     p
       margin-left: 10px
       font-size: 14px
-      color: $blue
+      color: colors.$blue
       cursor: pointer
       &:hover
-        color: $blue-hover
+        color: colors.$blue-hover
 
       span
-        color: #000
+        color: colors.$black-secondary
         opacity: 0.55
         cursor: default
 

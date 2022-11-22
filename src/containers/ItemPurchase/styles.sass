@@ -1,14 +1,15 @@
-$laptop-size: 1024px
+@use '../../styles/modules/_colors'
+@use '../../styles/modules/_sizes'
 
 .ItemPurchase
-  padding: 16px
+  padding: sizes.$padding-md
 
   &-container
     padding: 26px 17px
-    border: thin solid #ededed
+    border: thin solid colors.$secondary-background-color
     border-radius: 8px
 
-@media screen and (max-width: $laptop-size)
+@media screen and (max-width: sizes.$laptop-size)
   .ItemPurchase
     &-container
       border: none

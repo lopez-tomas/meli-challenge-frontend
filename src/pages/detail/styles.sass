@@ -1,28 +1,24 @@
-$laptop-size: 1024px
-$tablet-size: 768px
-$mobile-size: 425px
+@use '../../styles/modules/_colors'
+@use '../../styles/modules/_sizes'
 
 $description-font-size--tablet: 18px
 $description-font-size--mobile: 14px
 
-$background-color: #ededed
-$container-background-color: #fff
 $detail-width: 85%
 $purchase-width: 325px
-$radius: 4px
 
 .DetailPage
   width: 100%
   height: 100%
   padding: 66px 0
-  background-color: $background-color
+  background-color: colors.$secondary-background-color
 
   .Detail-container, .Description-container
     display: grid
     width: $detail-width
     margin: 0 auto
-    border-radius: $radius
-    background-color: $container-background-color
+    border-radius: sizes.$radius-md
+    background-color: colors.$white
 
   .Detail-container
     grid-template-columns: 1fr 1fr $purchase-width
@@ -43,9 +39,9 @@ $radius: 4px
         line-height: 21.6px
         letter-spacing: normal
         word-break: break-word
-        color: #666666
+        color: colors.$grey-secondary
 
-@media screen and (max-width: $laptop-size)
+@media screen and (max-width: sizes.$laptop-size)
   .DetailPage
     .Detail-container, .Description-container
       grid-template-columns: 1fr
@@ -73,7 +69,7 @@ $radius: 4px
         padding: 0 12px 48px 12px
         margin-top: 24px
 
-@media screen and (max-width: $tablet-size)
+@media screen and (max-width: sizes.$tablet-size)
   .DetailPage
     .Detail-container
       grid-template-areas: "image" "info" "purchase"
@@ -85,7 +81,7 @@ $radius: 4px
         p
           font-size: $description-font-size--tablet
 
-@media screen and (max-width: $mobile-size)
+@media screen and (max-width: sizes.$mobile-size)
   .DetailPage
     .Description-container
       .Description

@@ -1,6 +1,5 @@
-$blue: #3483fa
-$blue-hover: #2968c8
-$laptop-size: 1024px
+@use '../../styles/modules/_colors'
+@use '../../styles/modules/_sizes'
 
 .Breadcrumb
   display: flex
@@ -14,7 +13,7 @@ $laptop-size: 1024px
   &-go-back
     color: rgba(0, 0, 0, 0.9)
     &:hover
-      color: $blue-hover
+      color: colors.$blue-hover
 
   &-separator
     margin: 0 8px
@@ -23,10 +22,10 @@ $laptop-size: 1024px
     color: rgba(0, 0, 0, 0.2)
 
   .alone
-    color: #666
+    color: colors.$grey-secondary
     &:hover
       color: rgba(0, 0, 0, 0.9)
 
-@media screen and (max-width: $laptop-size)
+@media screen and (max-width: sizes.$laptop-size)
   .Breadcrumb
     display: none
