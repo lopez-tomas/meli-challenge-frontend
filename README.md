@@ -7,11 +7,12 @@ Frontend para el *challenge* propuesto por Mercado Libre. El mismo debía contar
 
 ### Tecnologías utilizadas:
 - React.js
+- TypeScript
 - Sass
 
 ***
 
-#### Para trabajar con el proyecto en local
+### Para trabajar con el proyecto en local
 1. Clonar el repositorio:
 ```bash
 git clone https://github.com/lopez-tomas/meli-challenge-frontend.git
@@ -27,3 +28,7 @@ npm i
 npm run dev
 ```
 
+***
+
+### Backend del proyecto:
+[MELI CHALLENGE BACKEND](https://github.com/lopez-tomas/meli-challenge-backend)
